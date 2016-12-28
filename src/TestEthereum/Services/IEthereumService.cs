@@ -6,6 +6,7 @@ namespace TestEthereum.Services
 {
     public interface IEthereumService
     {
+        string AccountAddress { get; set; } 
         Task<bool> SaveContractToTableStorage(EthereumContractInfo contract);
         Task<EthereumContractInfo> GetContractFromTableStorage(string name);
         Task<decimal> GetBallance(string address);
