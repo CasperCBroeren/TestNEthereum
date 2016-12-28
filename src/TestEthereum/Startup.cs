@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TestEthereum.Services;
+using TestEthereum.Model;
 
 namespace TestEthereum
 {
@@ -20,6 +22,7 @@ namespace TestEthereum
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+            
         }
 
         public IConfigurationRoot Configuration { get; }
@@ -29,6 +32,8 @@ namespace TestEthereum
         {
             // Add framework services.
             services.AddMvc();
+            services.Configure<EthereumSettings>(Configuration);
+            services.AddScoped<IEthereumService, BasicEthereumService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

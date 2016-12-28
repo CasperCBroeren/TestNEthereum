@@ -14,7 +14,10 @@
     "Microsoft.Extensions.Logging": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0"
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0", 
+    "Nethereum.Portable": "1.0.4",
+    "Portable.BouncyCastle": "1.8.1.1",
+    "WindowsAzure.Storage": "7.2.1"
   },
 
   "tools": {
